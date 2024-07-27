@@ -117,7 +117,7 @@ pi_gaussian <- function(df, fit, alpha, names, yhatName){
 get_sim_response <- function(df, fit, nSims){
 
     nPreds <- NROW(df)
-    modmat <- model.matrix(fit, data = df)
+    modmat <- new_modelmatrix(fit, data = df)
     response_distr <- fit$family$family
     inverselink <- fit$family$linkinv
     overdisp <- summary(fit)$dispersion
